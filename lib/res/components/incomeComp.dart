@@ -1,4 +1,4 @@
-import 'package:expense_tracker/utils/extension/extension.dart';
+import 'package:FinFlow/utils/extension/extension.dart';
 import 'package:flutter/material.dart';
 
 class IncomeComp extends StatelessWidget {

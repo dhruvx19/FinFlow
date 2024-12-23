@@ -1,4 +1,4 @@
-import 'package:expense_tracker/Models/expenseModel.dart';
+import 'package:FinFlow/models/expenseModel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

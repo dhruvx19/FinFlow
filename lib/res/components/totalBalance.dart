@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:expense_tracker/utils/extension/extension.dart';
-import 'package:expense_tracker/res/components/expenseComp.dart';
-import 'package:expense_tracker/res/components/incomeComp.dart';
+import 'package:FinFlow/utils/extension/extension.dart';
+import 'package:FinFlow/res/components/expenseComp.dart';
+import 'package:FinFlow/res/components/incomeComp.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TotalBalanceComp extends StatelessWidget {

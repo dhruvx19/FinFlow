@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:expense_tracker/Models/expenseModel.dart';
+import 'package:FinFlow/models/expenseModel.dart';
 
 class Boxes {
   static Future<Box<ExpenseModel>> getData() async {

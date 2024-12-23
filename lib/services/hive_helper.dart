@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:expense_tracker/Models/expenseModel.dart';
-import 'package:expense_tracker/services/boxes.dart';
+import 'package:FinFlow/models/expenseModel.dart';
+import 'package:FinFlow/services/boxes.dart';
 import 'package:hive/hive.dart';
 
 class HiveHelper {

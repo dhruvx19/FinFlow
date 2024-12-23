@@ -1,7 +1,7 @@
 // // Add to pubspec.yaml:
 // // shared_preferences: ^2.2.2
 
-// import 'package:expense_tracker/notification/notification.dart';
+// import 'package:FinFlow/notification/notification.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 // import 'package:notification_listener_service/notification_listener_service.dart';

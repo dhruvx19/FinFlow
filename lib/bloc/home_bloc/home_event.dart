@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:expense_tracker/Models/expenseModel.dart';
+import 'package:FinFlow/models/expenseModel.dart';
 
 abstract class HomeEvent extends Equatable {
   @override

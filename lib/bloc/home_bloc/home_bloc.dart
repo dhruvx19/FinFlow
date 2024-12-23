@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:expense_tracker/bloc/home_bloc/home_event.dart';
-import 'package:expense_tracker/bloc/home_bloc/home_state.dart';
-import 'package:expense_tracker/services/hive_helper.dart';
+import 'package:FinFlow/bloc/home_bloc/home_event.dart';
+import 'package:FinFlow/bloc/home_bloc/home_state.dart';
+import 'package:FinFlow/services/hive_helper.dart';
 import 'package:flutter/foundation.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:expense_tracker/Models/expenseModel.dart';
+import 'package:FinFlow/models/expenseModel.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:expense_tracker/bloc/home_bloc/home_bloc.dart';
-import 'package:expense_tracker/bloc/home_bloc/home_state.dart';
+import 'package:FinFlow/bloc/home_bloc/home_bloc.dart';
+import 'package:FinFlow/bloc/home_bloc/home_state.dart';
 import 'package:intl/intl.dart';
 
 class ExpenseSummaryScreen extends StatefulWidget {

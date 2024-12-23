@@ -1,4 +1,4 @@
-import 'package:expense_tracker/utils/colors.dart';
+import 'package:FinFlow/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 

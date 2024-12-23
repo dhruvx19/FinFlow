@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:expense_tracker/services/hive_helper.dart';
+import 'package:FinFlow/services/hive_helper.dart';
 part 'amount_event.dart';
 part 'amount_state.dart';
 
