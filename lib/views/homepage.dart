@@ -21,7 +21,6 @@ class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-
 class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
@@ -42,26 +41,33 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ExpenseSummaryScreen(),
-              ));
-          },
-          icon: Image.asset(
-            ImageAsset.leadingHome,
-            height: context.mh * 0.06,
-            width: context.mw * 0.06,
-            color: Colors.black,
-          ),
-        ),
         title: Text(
           'DashBoard',
           style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: context.mw * 0.04),
+            child: IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ExpenseSummaryScreen(),
+                    ));
+              },
+              icon: Image.asset(
+                ImageAsset.leadingHome,
+                height: context.mh * 0.09,
+                width: context.mw * 0.09,
+                color: Colors.black,
+                semanticLabel: 'Summary',
+                
+              ),
+            ),
+          ),
+        ],
       ),
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
@@ -201,9 +207,9 @@ class _HomeViewState extends State<HomeView> {
                                           color: Colors.white),
                                     ),
                                     title: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        
                                         Text(
                                           '₹${state.expenseList[index].amount.toString()}',
                                           style: GoogleFonts.poppins(
