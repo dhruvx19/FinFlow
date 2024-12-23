@@ -34,7 +34,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  timezone: ^0.10.0
   flutter_local_notifications: ^18.0.1
+  flutter_timezone: ^4.0.0
   fluttertoast: ^8.2.10
   font_awesome_flutter: ^10.8.0
   google_fonts: ^6.2.1

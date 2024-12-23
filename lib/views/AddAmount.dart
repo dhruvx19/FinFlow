@@ -6,6 +6,7 @@ import 'package:expense_tracker/bloc/cubit/setDateCubit.dart';
 import 'package:expense_tracker/bloc/cubit/transactionCubit.dart';
 import 'package:expense_tracker/bloc/home_bloc/home_bloc.dart';
 import 'package:expense_tracker/bloc/home_bloc/home_event.dart';
+import 'package:expense_tracker/notification/notification.dart';
 import 'package:expense_tracker/res/components/TextFromFeilds.dart';
 import 'package:expense_tracker/res/components/dateContainer.dart';
 import 'package:expense_tracker/res/components/resuableContainer.dart';
@@ -271,6 +272,21 @@ class _AddAmountState extends State<AddAmount> {
                                 // )
                                 ReuseAbleBtn(
                                   ontap: () async {
+                                    if (amountController.text.isEmpty) {
+                                      Fluttertoast.showToast(
+                                        msg: "Please enter amount",
+                                        backgroundColor: Colors.red,
+                                      );
+                                      return;
+                                    }
+                                    if (dscripController.text.isEmpty) {
+                                      Fluttertoast.showToast(
+                                        msg: "Please enter description",
+                                        backgroundColor: Colors.red,
+                                      );
+                                      return;
+                                    }
+
                                     if (widget.isEditing) {
                                       final newExpense = ExpenseModel(
                                         amount: amountController.text,
@@ -297,12 +313,14 @@ class _AddAmountState extends State<AddAmount> {
                                             ),
                                           );
 
-                                      // Refresh the home screen data
+                                      // Initialize notifications for new expense
+                                      await LocalNotifications
+                                          .initializeExpenseNotifications();
+
                                       context
                                           .read<HomeBloc>()
                                           .add(RefreshHomeEvent());
 
-                                      // Show success toast message
                                       Fluttertoast.showToast(
                                         msg: "Amount added successfully!",
                                         toastLength: Toast.LENGTH_SHORT,
@@ -312,10 +330,11 @@ class _AddAmountState extends State<AddAmount> {
                                         fontSize: 16.0,
                                       );
                                     }
+
                                     await Future.delayed(
                                         const Duration(seconds: 1));
                                     if (context.mounted) {
-                                      Navigator.pop(context);
+                                      Navigator.pop(context, true);
                                     }
                                   },
                                 )
