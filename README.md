@@ -6,7 +6,7 @@
 ![Build](https://img.shields.io/badge/Build-Passing-success)
 
 <p align="center">
-  <img src="assets/images/demo.png" alt="FinFlow App Demo" width="300">
+  <img src="assets/images/demo.png" alt="FinFlow App Demo" width="500">
 </p>
 
 ## 📱 Overview
