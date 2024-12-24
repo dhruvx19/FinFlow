@@ -5,6 +5,10 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Build](https://img.shields.io/badge/Build-Passing-success)
 
+<p align="center">
+  <img src="assets/images/demo.png" alt="FinFlow App Demo" width="300">
+</p>
+
 ## 📱 Overview
 
 FinFlow is your personal finance companion that helps you track both income and expenses, providing detailed insights into your financial health. With features like balance tracking, periodic reports, and smart notifications, managing your finances has never been easier.
