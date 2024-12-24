@@ -17,11 +17,13 @@ FinFlow is your personal finance companion that helps you track both income and 
 
 ### 💰 Transaction Management
 - **Record Transactions**
+  - Firebase Authentication(Login/Signin)
   - Add Income entries
   - Add Expense entries
-  - Attach images to transactions
-  - Add notes and categories
   - Set transaction date
+  - Edit or Delete entries
+  - Local Notification Reminders
+  - Weekly or Monthly Summary
 
 - **Balance Overview**
   - View total balance
