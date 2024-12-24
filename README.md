@@ -1,6 +1,6 @@
 # FinFlow - Personal Finance Management App
 
-![Flutter Version](https://img.shields.io/badge/Flutter-3.16.0-blue)
+![Flutter Version](https://img.shields.io/badge/Flutter-3.24.0-blue)
 ![Dart Version](https://img.shields.io/badge/Dart-3.2.0-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Build](https://img.shields.io/badge/Build-Passing-success)
@@ -91,7 +91,7 @@ class ReportData {
 ## 🚀 Getting Started
 
 ### Prerequisites
-1. **Flutter SDK** (3.16.0 or higher)
+1. **Flutter SDK** (3.24.0 or higher)
 2. **Dart SDK** (3.2.0 or higher)
 3. **Android Studio** or **VS Code**
 4. **Git**
@@ -131,9 +131,6 @@ dependencies:
   
   # Notifications
   flutter_local_notifications: ^9.0.0
-  
-  # Image Handling
-  image_picker: ^1.0.4
   
   # Charts
   fl_chart: ^0.63.0
