@@ -250,9 +250,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-Your Name - email@example.com
+Your Name - dhruvbalchandani1@gmail.com
 
-Project Link: [https://github.com/yourusername/finflow](https://github.com/yourusername/finflow)
+Project Link: [https://github.com/dhruvx19/finflow](https://github.com/dhruvx19/finflow)
 
 ---
 Remember to star ⭐ the repo if you find it helpful!
