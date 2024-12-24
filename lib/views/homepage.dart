@@ -1,3 +1,4 @@
+import 'package:FinFlow/services/auth/auth_services.dart';
 import 'package:FinFlow/services/notification/notification.dart';
 import 'package:FinFlow/res/components/add_del.dart';
 import 'package:FinFlow/res/components/totalBalance.dart';
@@ -7,12 +8,14 @@ import 'package:FinFlow/utils/utils.dart';
 import 'package:FinFlow/views/add_amount.dart';
 import 'package:FinFlow/views/dashboard.dart';
 import 'package:FinFlow/views/summary.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:FinFlow/bloc/home_bloc/home_bloc.dart';
 import 'package:FinFlow/bloc/home_bloc/home_event.dart';
 import 'package:FinFlow/bloc/home_bloc/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -56,8 +59,75 @@ class _HomeViewState extends State<HomeView> {
     final double listItemFontSize = (size.width * 0.022).clamp(14.0, 17.0);
 
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.black, Colors.blue],
+                  begin: Alignment.center,
+                  end: Alignment.topLeft,
+                ),
+              ),
+              child: FutureBuilder(
+                future: Hive.openBox('userBox'),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    final box = snapshot.data as Box;
+                    final username = box.get('username', defaultValue: 'User');
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Welcome $username',
+                          style: GoogleFonts.poppins(
+                            fontSize: titleFontSize,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          FirebaseAuth.instance.currentUser?.email ?? '',
+                          style: GoogleFonts.poppins(
+                            fontSize: titleFontSize * 0.7,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    );
+                  }
+                  return const CircularProgressIndicator();
+                },
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: Text(
+                'Logout',
+                style: GoogleFonts.poppins(),
+              ),
+              onTap: () {
+                AuthService().signout(context: context);
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         toolbarHeight: appBarHeight,
+        leading: Builder(
+          builder: (context) => GestureDetector(
+            onTap: () => Scaffold.of(context).openDrawer(),
+            child: Padding(
+              padding: const EdgeInsets.all( 16.0),
+              child: Image.asset(
+                'assets/images/category_icon.png', // Add this image to your assets
+                width: 10,
+                height: 10,
+              ),
+            ),
+          ),
+        ),
         title: Text(
           'DashBoard',
           style: GoogleFonts.poppins(
