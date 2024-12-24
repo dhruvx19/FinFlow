@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "784094014167",
+    "project_id": "firebase-finflow",
+    "storage_bucket": "firebase-finflow.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784094014167:android:a745b195b0ba08a9c51e92",
+        "android_client_info": {
+          "package_name": "com.dhruv.firebasefinflow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKyv9u5v5JOhtBjJYBAjNhTqNoav7ga_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

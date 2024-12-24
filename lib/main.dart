@@ -1,7 +1,10 @@
 import 'package:FinFlow/bloc/amount_bloc/amount_bloc.dart';
 import 'package:FinFlow/bloc/cubit/setDateCubit.dart';
 import 'package:FinFlow/bloc/cubit/transactionCubit.dart';
+import 'package:FinFlow/firebase_options.dart';
 import 'package:FinFlow/services/notification/notification.dart';
+import 'package:FinFlow/views/login/signin.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:FinFlow/models/expenseModel.dart';
 import 'package:FinFlow/bloc/home_bloc/home_bloc.dart';
@@ -17,6 +20,7 @@ FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await LocalNotifications.init();
   var directory = await getApplicationDocumentsDirectory();
   Hive.init(directory.path);
@@ -51,7 +55,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
           useMaterial3: true,
         ),
-        home: const HomeView(),
+        home:  Signup(),
       ),
     );
   }
